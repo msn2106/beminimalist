@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.add-hidden {
+  display: none;
+}
+
+.sidenav {
+  position: fixed;
+  top: 80px;
+  left: -300px; 
+  width: 300px;
+  height: 100vh;
+  background-color: #000000;
+  color: #fff;
+  transition: transition 0.3s ease; 
+  box-shadow: 0 2px 5px rgba(233, 226, 226, 0.2);
+
+}
+
+.sidenav.open {
+  left: 0; 
+}
+
+
+
