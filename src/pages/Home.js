@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import store from '../store/configurestore';
+import Products from './Products';
+import { getProducts } from '../store/actions';
 
 
 const data = [
@@ -82,7 +85,7 @@ const Card = ({ title, children }) => (
 const Home = () => {
 
   const [startCardIndex, setStartCardIndex] = useState(0);
-
+  console.log('store:',store.getState().productReducer);
 
 
   const handleLeftArrowClick = () => {
@@ -94,20 +97,21 @@ const Home = () => {
   };
 
   return (
-    <div style={{ background: "#eee" }}>
-      <i className="fas fa-chevron-left arrow" onClick={handleLeftArrowClick}></i>
-      <div className="review-list" style={containerStyle}>
-        {data.slice(startCardIndex, startCardIndex + 3).map((ele) => (
-          <Card key={ele.id} title={ele.title}>
-            {ele.desc}
-          </Card>
-        ))}
-      </div>
-      <i
-        className="fas fa-chevron-right arrow"
-        onClick={handleRightArrowClick}
-      ></i>
-    </div>
+    // <div style={{ background: "#eee" }}>
+    //   <i className="fas fa-chevron-left arrow" onClick={handleLeftArrowClick}></i>
+    //   <div className="review-list" style={containerStyle}>
+    //     {data.slice(startCardIndex, startCardIndex + 3).map((ele) => (
+    //       <Card key={ele.id} title={ele.title}>
+    //         {ele.desc}
+    //       </Card>
+    //     ))}
+    //   </div>
+    //   <i
+    //     className="fas fa-chevron-right arrow"
+    //     onClick={handleRightArrowClick}
+    //   ></i>
+    // </div>
+    <Products/>
   )
 }
 
