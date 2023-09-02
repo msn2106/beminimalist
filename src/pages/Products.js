@@ -15,7 +15,7 @@ const Products = () => {
   //   fetchProducts();
   // }, []);
   return (
-    <div>
+    <div style={{display:'flex',flexWrap:'wrap', paddingLeft: '5%', paddingRight: '5%'}}>
       {products?.map((product, index) => (
         <ProductCard product={product} key={`product-${index}`}/>
       ))}
